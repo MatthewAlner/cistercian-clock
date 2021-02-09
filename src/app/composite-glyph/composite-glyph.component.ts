@@ -26,7 +26,7 @@ export class CompositeGlyphComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: ICompositeGlyphComponentChanges): void {
     if (changes.value && changes.value.currentValue != null) {
-      const valueAsString: string = this.clampWithinBounds(changes.value.currentValue).toString();
+      const valueAsString: string = this.clampWithinBounds(changes.value.currentValue).toString().padStart(4, '0');
       const [thousands, hundreds, tens, ones ] = valueAsString.split('');
       this.thousands = parseInt(thousands, 10);
       this.hundreds = parseInt(hundreds, 10);

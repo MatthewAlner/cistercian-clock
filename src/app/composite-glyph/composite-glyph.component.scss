@@ -1,11 +1,16 @@
 .composite-glyph {
-  position: relative;
-  width: 1em; // controlled by font size in parent
+  width: 200px;
+  /* These three properties are where the magic happens: */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4px hsl(333deg 100% 50%);
+  filter:
+    drop-shadow(0px 2px 2px hsl(0deg 0% 0% / 0.5))
+    drop-shadow(0px 0px 4px hsl(333deg 100% 50% / 0.5))
+    drop-shadow(0px 0px 10px hsl(333deg 100% 50% / 0.5))
+    drop-shadow(0px 0px 50px hsl(333deg 100% 50% / 1));
 
-  img {
-    position: absolute;
-    width: 100%;
-  }
+  /* Fallback for IE */
+  color: deeppink;
 }
 
 .tens {
@@ -18,4 +23,11 @@
 
 .thousands {
   transform: rotate(180deg);
+}
+
+/*
+  The default blue selection color clashes.
+*/
+::selection {
+  background-color: hsl(0deg 0% 0%);
 }

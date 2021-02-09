@@ -1,15 +1,54 @@
-<div class="composite-glyph">
-  <img *ngIf="thousands" class='thousands' [src]="'assets/glyphs/'+ thousands + '.svg'" alt="4">
-  <img *ngIf="hundreds"  class='hundreds' [src]="'assets/glyphs/'+ hundreds + '.svg'" alt="3">
-  <img *ngIf="tens" class='tens' [src]="'assets/glyphs/'+ tens + '.svg'" alt="2">
-  <img *ngIf="ones" class='ones' [src]="'assets/glyphs/'+ ones + '.svg'" alt="1">
-</div>
-<!--<pre>-->
-<!--  {{thousands}}-->
-<!--  {{hundreds}}-->
-<!--  {{tens}}-->
-<!--  {{ones}}-->
-<!--</pre>-->
-<!--<pre>-->
-<!--  {{value}}-->
-<!--</pre>-->
+<ul>
+  <li>ones: {{ones}}</li>
+  <li>tens: {{tens}}</li>
+  <li>hundreds: {{hundreds}}</li>
+  <li>thousands: {{thousands}}</li>
+</ul>
+<pre>value: {{value}}</pre>
+
+<svg class="composite-glyph" viewBox="0 0 45 57" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+  <g id="ones">
+    <path *ngIf="ones === 1" id="_1" d="M39 0H20.25v52.5l3.733 3.75V3.75H42.75L39 0z"/>
+    <path *ngIf="ones === 2" id="_2" d="M23.983 22.517H42.75L39 18.767H23.983V3.75L20.25 0v52.5l3.733 3.75V22.517z"/>
+    <path *ngIf="ones === 3" id="_3" d="M20.25 0v52.5l3.733 3.75V9.036l15.359 15.359v-5.303L20.25 0z"/>
+    <path *ngIf="ones === 4" id="_4" d="M23.983 18.768V3.75L20.25 0v52.5l3.733 3.75V24.072L42.751 5.303V0L23.983 18.768z"/>
+    <path *ngIf="ones === 5" id="_5" d="M40.5 0H20.25v52.5l3.733 3.75V24.017L44.25 3.75 40.5 0zM23.983 3.733v14.98L38.946 3.75l-14.963-.017z"/>
+    <path *ngIf="ones === 6" id="_6" d="M23.983 3.75L20.25 0v52.5l3.733 3.75V3.75zM39 0v18.75l3.75 3.75V3.75L39 0z"/>
+    <path *ngIf="ones === 7" id="_7" d="M20.25 0v52.5l3.733 3.75V3.75H39v15.017l3.75 3.75V3.75L39 0H20.25z"/>
+    <path *ngIf="ones === 8" id="_8" d="M42.75 22.5V3.75L39 0v18.75H23.983v-15L20.25 0v52.5l3.733 3.75V22.5H42.75z"/>
+    <path *ngIf="ones === 9" id="_9" d="M20.25 0v52.5l3.733 3.75.009-33.733H42.75V3.75L39 0H20.25zm3.733 3.75v15.017h15.009L39 3.75H23.983z"/>
+  </g>
+  <g id="tens">
+    <path *ngIf="tens === 1" id="_10" d="M5.25 0H24v52.5l-3.733 3.75V3.75H1.5L5.25 0z"/>
+    <path *ngIf="tens === 2" id="_20" d="M20.267 22.517H1.5l3.75-3.75h15.017V3.75L24 0v52.5l-3.733 3.75V22.517z"/>
+    <path *ngIf="tens === 3" id="_30" d="M24 0v52.5l-3.733 3.75V9.036L4.908 24.395v-5.303L24 0z"/>
+    <path *ngIf="tens === 4" id="_40" d="M20.267 18.768V3.75L24 0v52.5l-3.733 3.75V24.072L1.499 5.303V0l18.768 18.768z"/>
+    <path *ngIf="tens === 5" id="_50" d="M3.75 0H24v52.5l-3.733 3.75V24.017L0 3.75 3.75 0zm16.517 3.733v14.98L5.304 3.75l14.963-.017z"/>
+    <path *ngIf="tens === 6" id="_60" d="M20.267 3.75L24 0v52.5l-3.733 3.75V3.75zM5.25 0v18.75L1.5 22.5V3.75L5.25 0z"/>
+    <path *ngIf="tens === 7" id="_70" d="M24 0v52.5l-3.733 3.75V3.75H5.25v15.017l-3.75 3.75V3.75L5.25 0H24z"/>
+    <path *ngIf="tens === 8" id="_80" d="M1.5 22.5V3.75L5.25 0v18.75h15.017v-15L24 0v52.5l-3.733 3.75V22.5H1.5z"/>
+    <path *ngIf="tens === 9" id="_90" d="M24 0v52.5l-3.733 3.75-.009-33.733H1.5V3.75L5.25 0H24zm-3.733 3.75v15.017H5.258L5.25 3.75h15.017z"/>
+  </g>
+  <g id="hundreds">
+    <path *ngIf="hundreds === 1" id="_100" d="M39 56.25H20.25V3.75L23.983 0v52.5H42.75L39 56.25z"/>
+    <path *ngIf="hundreds === 2" id="_200" d="M23.983 33.733H42.75L39 37.483H23.983V52.5l-3.733 3.75V3.75L23.983 0v33.733z"/>
+    <path *ngIf="hundreds === 3" id="_300" d="M20.25 56.25V3.75L23.983 0v47.214l15.359-15.359v5.303L20.25 56.25z"/>
+    <path *ngIf="hundreds === 4" id="_400" d="M23.983 37.482V52.5l-3.733 3.75V3.75L23.983 0v32.178l18.768 18.769v5.303L23.983 37.482z"/>
+    <path *ngIf="hundreds === 5" id="_500" d="M40.5 56.25H20.25V3.75L23.983 0v32.233L44.25 52.5l-3.75 3.75zm-16.517-3.733v-14.98L38.946 52.5l-14.963.017z"/>
+    <path *ngIf="hundreds === 6" id="_600" d="M23.983 52.5l-3.733 3.75V3.75L23.983 0v52.5zM39 56.25V37.5l3.75-3.75V52.5L39 56.25z"/>
+    <path *ngIf="hundreds === 7" id="_700" d="M20.25 56.25V3.75L23.983 0v52.5H39V37.483l3.75-3.75V52.5L39 56.25H20.25z"/>
+    <path *ngIf="hundreds === 8" id="_800" d="M42.75 33.75V52.5L39 56.25V37.5H23.983v15l-3.733 3.75V3.75L23.983 0v33.75H42.75z"/>
+    <path *ngIf="hundreds === 9" id="_900" d="M20.25 56.25V3.75L23.983 0l.009 33.733H42.75V52.5L39 56.25H20.25zm3.733-3.75V37.483h15.009L39 52.5H23.983z"/>
+  </g>
+  <g id="thousands">
+    <path *ngIf="thousands === 1" id="_1000" d="M5.25 56.25H24V3.75L20.267 0v52.5H1.5l3.75 3.75z"/>
+    <path *ngIf="thousands === 2" id="_2000" d="M20.267 33.733H1.5l3.75 3.75h15.017V52.5L24 56.25V3.75L20.267 0v33.733z"/>
+    <path *ngIf="thousands === 3" id="_3000" d="M24 56.25V3.75L20.267 0v47.214L4.908 31.855v5.303L24 56.25z"/>
+    <path *ngIf="thousands === 4" id="_4000" d="M20.267 37.482V52.5L24 56.25V3.75L20.267 0v32.178L1.499 50.947v5.303l18.768-18.768z"/>
+    <path *ngIf="thousands === 5" id="_5000" d="M3.75 56.25H24V3.75L20.267 0v32.233L0 52.5l3.75 3.75zm16.517-3.733v-14.98L5.304 52.5l14.963.017z"/>
+    <path *ngIf="thousands === 6" id="_6000" d="M20.267 52.5L24 56.25V3.75L20.267 0v52.5zM5.25 56.25V37.5L1.5 33.75V52.5l3.75 3.75z"/>
+    <path *ngIf="thousands === 7" id="_7000" d="M24 56.25V3.75L20.267 0v52.5H5.25V37.483l-3.75-3.75V52.5l3.75 3.75H24z"/>
+    <path *ngIf="thousands === 8" id="_8000" d="M1.5 33.75V52.5l3.75 3.75V37.5h15.017v15L24 56.25V3.75L20.267 0v33.75H1.5z"/>
+    <path *ngIf="thousands === 9" id="_9000" d="M24 56.25V3.75L20.267 0l-.009 33.733H1.5V52.5l3.75 3.75H24zm-3.733-3.75V37.483H5.258L5.25 52.5h15.017z"/>
+  </g>
+</svg>
