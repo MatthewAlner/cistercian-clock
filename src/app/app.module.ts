@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClockPageComponent } from './clock-page/clock-page.component';
 import { CompositeGlyphComponent } from './composite-glyph/composite-glyph.component';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClockPageComponent,
-    CompositeGlyphComponent
+    CompositeGlyphComponent,
+    TimeComponent
   ],
   imports: [
     BrowserModule,

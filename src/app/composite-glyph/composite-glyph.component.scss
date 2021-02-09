@@ -1,7 +1,10 @@
 .composite-glyph {
+  position: relative;
+  width: 1em; // controlled by font size in parent
+
   img {
-    height: 100px;
     position: absolute;
+    width: 100%;
   }
 }
 
