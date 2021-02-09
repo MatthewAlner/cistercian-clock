@@ -1,0 +1,25 @@
+@use "./src/app/glyphs/glow";
+
+.composite-glyph {
+  fill: whitesmoke;
+  height: 1em;
+}
+
+.tens {
+  transform: scaleX(-1)
+}
+
+.hundreds {
+  transform: scaleX(-1) rotate(180deg);
+}
+
+.thousands {
+  transform: rotate(180deg);
+}
+
+/*
+  The default blue selection color clashes.
+*/
+::selection {
+  background-color: hsl(0deg 0% 0%);
+}

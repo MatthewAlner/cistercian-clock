@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { SimpleChangeGeneric } from '../simple-change-generic';
+import { SimpleChangeGeneric } from '../../simple-change-generic';
 import clamp from 'lodash/clamp';
 
 interface ICompositeGlyphComponentChanges extends SimpleChanges {
