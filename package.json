@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
     "@ngneat/tailwind": "^6.0.3",
+    "@types/lodash": "^4.14.168",
+    "loadsh": "^0.0.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

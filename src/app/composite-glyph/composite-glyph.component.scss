@@ -1,0 +1,18 @@
+.composite-glyph {
+  img {
+    height: 100px;
+    position: absolute;
+  }
+}
+
+.tens {
+  transform: scaleX(-1)
+}
+
+.hundreds {
+  transform: scaleX(-1) rotate(180deg);
+}
+
+.thousands {
+  transform: rotate(180deg);
+}
