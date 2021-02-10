@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-colon',
   templateUrl: './colon.component.html',
-  styleUrls: ['./colon.component.scss']
+  styleUrls: ['./colon.component.scss'],
 })
 export class ColonComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

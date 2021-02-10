@@ -7,17 +7,15 @@ import { ITime } from '../../models/time';
 @Component({
   selector: 'app-clock-page',
   templateUrl: './clock-page.component.html',
-  styleUrls: [ './clock-page.component.scss' ]
+  styleUrls: ['./clock-page.component.scss'],
 })
 export class ClockPageComponent implements OnInit, OnDestroy {
-
   public time$: Subject<ITime> = new Subject<ITime>();
   public date$: Subject<IDate> = new Subject<IDate>();
   private componentDestroyed$: Subject<void> = new Subject<void>();
   private ONE_SECOND = 1000;
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnDestroy(): void {
     this.componentDestroyed$.next();
@@ -43,4 +41,3 @@ export class ClockPageComponent implements OnInit, OnDestroy {
       });
   }
 }
-

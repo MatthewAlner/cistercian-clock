@@ -9,20 +9,9 @@ import { KeyPageComponent } from './key-page/key-page.component';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ClockPageComponent,
-    TimeComponent,
-    DateComponent,
-    KeyPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule
-  ],
+  declarations: [AppComponent, ClockPageComponent, TimeComponent, DateComponent, KeyPageComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
