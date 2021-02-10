@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { IDate } from '../../models/date';
 import { ITime } from '../../models/time';
 
 @Component({
@@ -11,6 +12,7 @@ import { ITime } from '../../models/time';
 export class ClockPageComponent implements OnInit, OnDestroy {
 
   public time$: Subject<ITime> = new Subject<ITime>();
+  public date$: Subject<IDate> = new Subject<IDate>();
   private componentDestroyed$: Subject<void> = new Subject<void>();
   private ONE_SECOND = 1000;
 
@@ -31,6 +33,12 @@ export class ClockPageComponent implements OnInit, OnDestroy {
           hours: d.getHours(),
           minutes: d.getMinutes(),
           seconds: d.getSeconds(),
+        });
+
+        this.date$.next({
+          day: d.getDate(),
+          month: d.getMonth() + 1,
+          year: d.getFullYear(),
         });
       });
   }
