@@ -1,15 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject, timer } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { ITime } from '../../models/time';
 
 @Component({
   selector: 'app-clock-page',
   templateUrl: './clock-page.component.html',
-  styleUrls: ['./clock-page.component.scss']
+  styleUrls: [ './clock-page.component.scss' ]
 })
-export class ClockPageComponent implements OnInit {
+export class ClockPageComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  public time$: Subject<ITime> = new Subject<ITime>();
+  private componentDestroyed$: Subject<void> = new Subject<void>();
+  private ONE_SECOND = 1000;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnDestroy(): void {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.complete();
+  }
+
+  ngOnInit(): void {
+    timer(0, this.ONE_SECOND)
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe(() => {
+        const d = new Date();
+        this.time$.next({
+          hours: d.getHours(),
+          minutes: d.getMinutes(),
+          seconds: d.getSeconds(),
+        });
+      });
+  }
 }
+
