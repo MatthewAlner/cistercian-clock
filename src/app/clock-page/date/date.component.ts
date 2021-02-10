@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IDate } from '../../models/date';
+import { IDate } from '../../../models/date';
 
 @Component({
   selector: 'app-date',

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITime } from '../../models/time';
+import { ITime } from '../../../models/time';
 
 @Component({
   selector: 'app-time',
