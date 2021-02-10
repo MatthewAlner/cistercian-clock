@@ -4,15 +4,12 @@ import { ITime } from '../../../models/time';
 @Component({
   selector: 'app-time',
   templateUrl: './time.component.html',
-  styleUrls: ['./time.component.scss']
+  styleUrls: ['./time.component.scss'],
 })
 export class TimeComponent implements OnInit {
-
   @Input() time: ITime;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
