@@ -14,7 +14,7 @@
   <div (click)='onGlyphClick(i, places.tens)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
        [ngClass]="{'border-opacity-0' : selection.get(places.tens) !== i}"
        class='flex flex-col justify-center items-center cursor-pointer py-2 sm:py-4 px-4 border-2 border-gray-300 rounded-lg hover:opacity-100 hover:border-gray-600'>
-    <app-composite-glyph [value]='(i + 1) * places.thousands' class='md:text-3xl text-2xl'></app-composite-glyph>
+    <app-composite-glyph [value]='(i + 1) * places.tens' class='md:text-3xl text-2xl'></app-composite-glyph>
     <span class='text-xs sm:text-lg md:text-2xl'>{{ (i + 1) * places.tens }}</span>
   </div>
   <div (click)='onGlyphClick(i, places.ones)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
