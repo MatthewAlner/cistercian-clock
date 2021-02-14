@@ -1,18 +1,1 @@
-<div class="inline-grid grid-cols-9 gap-4">
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="i + 1"></app-composite-glyph>
-    <span>{{ i + 1 }}</span>
-  </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 10"></app-composite-glyph>
-    <span>{{ (i + 1) * 10 }}</span>
-  </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 100"></app-composite-glyph>
-    <span>{{ (i + 1) * 100 }}</span>
-  </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 1000"></app-composite-glyph>
-    <span>{{ (i + 1) * 1000 }}</span>
-  </div>
-</div>
+<app-glyph-grid></app-glyph-grid>
