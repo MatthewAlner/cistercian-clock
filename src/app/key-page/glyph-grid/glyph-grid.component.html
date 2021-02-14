@@ -1,18 +1,28 @@
-<div class="inline-grid grid-cols-9 gap-4">
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="i + 1" class='text-3xl'></app-composite-glyph>
+<div class='inline-grid grid-cols-9 gap-4'>
+  <div (click)='onGlyphClick(i, places.thousands)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
+       [ngClass]="{'border-opacity-0' : selection.get(places.thousands) !== i}"
+       class='flex flex-col justify-center items-center cursor-pointer p-4 border-2 border-gray-600'>
+    <app-composite-glyph [value]='(i + 1) * places.thousands' class='text-3xl'></app-composite-glyph>
+    <span>{{ (i + 1) * places.thousands }}</span>
+  </div>
+  <div (click)='onGlyphClick(i, places.hundreds)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
+       [ngClass]="{'border-opacity-0' : selection.get(places.hundreds) !== i}"
+       class='flex flex-col justify-center items-center cursor-pointer p-4 border-2 border-gray-600'>
+    <app-composite-glyph [value]='(i + 1) * places.hundreds' class='text-3xl'></app-composite-glyph>
+    <span>{{ (i + 1) * places.hundreds }}</span>
+  </div>
+  <div (click)='onGlyphClick(i, places.tens)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
+       [ngClass]="{'border-opacity-0' : selection.get(places.tens) !== i}"
+       class='flex flex-col justify-center items-center cursor-pointer p-4 border-2 border-gray-600'>
+    <app-composite-glyph [value]='(i + 1) * places.thousands' class='text-3xl'></app-composite-glyph>
+    <span>{{ (i + 1) * places.tens }}</span>
+  </div>
+  <div (click)='onGlyphClick(i, places.ones)' *ngFor='let n of 9 | numberArrayOneToN; let i = index'
+       [ngClass]="{'border-opacity-0' : selection.get(places.ones) !== i}"
+       class='flex flex-col justify-center items-center cursor-pointer p-4 border-2 border-gray-600'>
+    <app-composite-glyph [value]='i + 1' class='text-3xl'></app-composite-glyph>
     <span>{{ i + 1 }}</span>
   </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 10" class='text-3xl'></app-composite-glyph>
-    <span>{{ (i + 1) * 10 }}</span>
-  </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 100" class='text-3xl'></app-composite-glyph>
-    <span>{{ (i + 1) * 100 }}</span>
-  </div>
-  <div *ngFor="let n of 9 | numberArrayOneToN; let i = index" class="flex flex-col justify-center items-center">
-    <app-composite-glyph [value]="(i + 1) * 1000" class='text-3xl'></app-composite-glyph>
-    <span>{{ (i + 1) * 1000 }}</span>
-  </div>
 </div>
+
+<div class='m-5'>total: {{total ? total : '-'}}</div>

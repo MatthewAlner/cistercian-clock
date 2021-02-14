@@ -1,16 +1,18 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
-    prefix: '',
-    purge: {
-      content: [
-        './src/**/*.{html,ts}',
-      ]
+  prefix: '',
+  purge: {
+    content: ['./src/**/*.{html,ts}'],
+  },
+  darkMode: 'class',
+  theme: {
+    colors: {
+      gray: colors.trueGray,
     },
-    darkMode: 'class', // or 'media' or 'class'
-    theme: {
-      extend: {},
-    },
-    variants: {
-      extend: {},
-    },
-    plugins: [],
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
 };
