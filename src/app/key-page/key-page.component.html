@@ -1,3 +1,5 @@
-<div class='flex justify-center items-center h-screen'>
-  <app-glyph-grid></app-glyph-grid>
+<div class='flex flex-col justify-center items-center h-screen'>
+  <app-glyph-grid [initialValue]='initialValue' (selectedValueChanged)='onSelectedValueChanged($event)'></app-glyph-grid>
+  <app-composite-glyph class='text-8xl mt-4' [value]='selectedValue ? selectedValue : 0'></app-composite-glyph>
+  <div class='m-5 text-2xl text-center'>{{selectedValue ? selectedValue : "-"}}</div>
 </div>

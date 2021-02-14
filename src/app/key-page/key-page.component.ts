@@ -6,7 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./key-page.component.scss'],
 })
 export class KeyPageComponent implements OnInit {
+  public selectedValue: number;
+  public initialValue: number;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initialValue = new Date().getFullYear();
+  }
+
+  public onSelectedValueChanged(selectedValue: number): void {
+    if (selectedValue != null) {
+      this.selectedValue = selectedValue;
+    }
+  }
 }

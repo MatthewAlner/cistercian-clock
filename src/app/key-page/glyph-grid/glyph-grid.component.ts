@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import sum from 'lodash-es/sum';
 
 enum PLACE {
@@ -16,21 +16,20 @@ enum PLACE {
 export class GlyphGridComponent implements OnInit {
   constructor() {}
   public places = PLACE;
+  @Input() initialValue = 0;
+  @Output() selectedValueChanged = new EventEmitter<number>();
 
   public selection: Map<PLACE, number> = new Map<number, number>();
   public total: number;
 
   ngOnInit(): void {
-    const [thousands, hundreds, tens, ones]: number[] = new Date()
-      .getFullYear()
+    const [thousands, hundreds, tens, ones]: number[] = this.initialValue
       .toString()
       .split('')
       .map(stringNum => {
         const index = parseInt(stringNum, 10) - 1;
         return index >= 0 ? index : null;
       });
-
-    console.log({ thousands, hundreds, tens, ones });
 
     this.selection.set(PLACE.thousands, thousands ?? null);
     this.selection.set(PLACE.hundreds, hundreds ?? null);
@@ -54,5 +53,6 @@ export class GlyphGridComponent implements OnInit {
       .filter(([, num]) => num != null)
       .map(([place, num]) => (num + 1) * place);
     this.total = sum(entries);
+    this.selectedValueChanged.emit(this.total);
   }
 }
