@@ -20,7 +20,24 @@ export class GlyphGridComponent implements OnInit {
   public selection: Map<PLACE, number> = new Map<number, number>();
   public total: number;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const [thousands, hundreds, tens, ones]: number[] = new Date()
+      .getFullYear()
+      .toString()
+      .split('')
+      .map(stringNum => {
+        const index = parseInt(stringNum, 10) - 1;
+        return index >= 0 ? index : null;
+      });
+
+    console.log({ thousands, hundreds, tens, ones });
+
+    this.selection.set(PLACE.thousands, thousands ?? null);
+    this.selection.set(PLACE.hundreds, hundreds ?? null);
+    this.selection.set(PLACE.tens, tens ?? null);
+    this.selection.set(PLACE.ones, ones ?? null);
+    this.sumTotal();
+  }
 
   public onGlyphClick(index: number, place: PLACE): void {
     const prevValue = this.selection.get(place);
